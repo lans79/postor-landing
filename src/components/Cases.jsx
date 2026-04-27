@@ -33,14 +33,12 @@ export default function Cases() {
     <section id="cases" className="section-padding" ref={ref}>
       <div className="container">
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'flex-end', marginBottom: '2rem' }} className="cases-header">
-          <div>
-            <p className="section-label reveal">Результаты</p>
-            <h2 className="section-title reveal" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}>
-              Кейсы<br />агентства
-            </h2>
-          </div>
-          <p className="section-subtitle reveal cases-subtitle" style={{ marginTop: 0 }}>
+        <div style={{ marginBottom: '2rem' }}>
+          <p className="section-label">Результаты</p>
+          <h2 className="section-title" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', marginBottom: '1rem' }}>
+            Кейсы<br />агентства
+          </h2>
+          <p style={{ color: 'var(--gray-text)', fontSize: '1.125rem', fontWeight: 500, lineHeight: 1.4 }}>
             Реальные цифры из рекламных кабинетов. Никаких «охватов» — только лиды и заявки.
           </p>
         </div>
@@ -115,7 +113,6 @@ export default function Cases() {
 
       <style>{`
         @media (max-width: 900px) {
-          .cases-header { grid-template-columns: 1fr !important; }
           .cases-cols { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 600px) {

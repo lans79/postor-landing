@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
 const ROTATING_TEXT = 'СМОТРЕТЬ КЕЙС · СМОТРЕТЬ КЕЙС · СМОТРЕТЬ КЕЙС · '
-const VIDEO_URL = 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+// TODO: замените VIDEO_URL на реальное видео перед публикацией
+const VIDEO_URL = null
 
 const STATS = [
   { value: '155 000+', label: 'подписчиков паблика' },
@@ -34,10 +35,12 @@ export default function Hero() {
               грязный ковер
             </h1>
 
+            {/* Кнопка скрыта до появления реального видео */}
             <button
               className="hero-play hero-anim hero-anim--d2"
-              onClick={() => setVideoOpen(true)}
+              onClick={() => VIDEO_URL && setVideoOpen(true)}
               aria-label="Смотреть видео о нас"
+              style={{ opacity: VIDEO_URL ? 1 : 0, pointerEvents: VIDEO_URL ? 'auto' : 'none' }}
             >
               <svg className="hero-play__text" viewBox="0 0 200 200">
                 <defs>
@@ -84,7 +87,7 @@ export default function Hero() {
         </div>
       </section>
 
-      {videoOpen && (
+      {videoOpen && VIDEO_URL && (
         <div className="video-modal" onClick={() => setVideoOpen(false)}>
           <div className="video-modal__box" onClick={e => e.stopPropagation()}>
             <button className="video-modal__close" onClick={() => setVideoOpen(false)}>✕</button>
