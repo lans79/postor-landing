@@ -54,9 +54,29 @@ export default function Header() {
       </header>
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        <a href="#" onClick={closeMenu} style={{ display: 'block', marginBottom: '2.5rem' }}>
-          <img src={logo} alt="Postor" style={{ height: 40, width: 'auto' }} />
-        </a>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
+          <a href="#" onClick={closeMenu}>
+            <img src={logo} alt="Postor" style={{ height: 40, width: 'auto', display: 'block' }} />
+          </a>
+          <button
+            onClick={closeMenu}
+            aria-label="Закрыть меню"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '0.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <line x1="4" y1="4" x2="24" y2="24" stroke="#0F0F0F" strokeWidth="2.5" strokeLinecap="round"/>
+              <line x1="24" y1="4" x2="4" y2="24" stroke="#0F0F0F" strokeWidth="2.5" strokeLinecap="round"/>
+            </svg>
+          </button>
+        </div>
         <div className="mobile-menu-links">
           {[['#services','Услуги'],['#cases','Кейсы'],['#team','Команда'],['#about','О нас'],['#faq','Вопросы'],['#contact','Контакты']].map(([href, label]) => (
             <a key={href} href={href} onClick={closeMenu}>{label}</a>
