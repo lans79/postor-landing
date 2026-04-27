@@ -4,12 +4,6 @@ const ROTATING_TEXT = 'СМОТРЕТЬ КЕЙС · СМОТРЕТЬ КЕЙС ·
 // TODO: замените VIDEO_URL на реальное видео перед публикацией
 const VIDEO_URL = null
 
-const STATS = [
-  { value: '155 000+', label: 'подписчиков паблика' },
-  { value: '216 ₽',   label: 'минимальный CPL' },
-  { value: '9 лет',   label: 'в нише чистоты' },
-  { value: '50+',     label: 'клиентов по России' },
-]
 
 export default function Hero() {
   const [videoOpen, setVideoOpen] = useState(false)
@@ -35,12 +29,10 @@ export default function Hero() {
               грязный ковер
             </h1>
 
-            {/* Кнопка скрыта до появления реального видео */}
             <button
               className="hero-play hero-anim hero-anim--d2"
               onClick={() => VIDEO_URL && setVideoOpen(true)}
               aria-label="Смотреть видео о нас"
-              style={{ opacity: VIDEO_URL ? 1 : 0, pointerEvents: VIDEO_URL ? 'auto' : 'none' }}
             >
               <svg className="hero-play__text" viewBox="0 0 200 200">
                 <defs>
@@ -74,15 +66,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Stats strip */}
-          <div className="hero-stats hero-anim hero-anim--d3">
-            {STATS.map((s, i) => (
-              <div className="hero-stat" key={i}>
-                <span className="hero-stat__value">{s.value}</span>
-                <span className="hero-stat__label">{s.label}</span>
-              </div>
-            ))}
-          </div>
 
         </div>
       </section>
