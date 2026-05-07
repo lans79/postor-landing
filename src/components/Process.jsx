@@ -98,7 +98,7 @@ export default function Process() {
 
         <div className="reveal" style={{ textAlign: 'center', marginTop: '2rem' }}>
           <a href="#contact" className="btn-primary" style={{ padding: '1.15rem 3rem' }}>
-            Начать бесплатно →
+            Получить бесплатный аудит →
           </a>
         </div>
       </div>

@@ -65,7 +65,7 @@ export default function Reviews() {
           Говорят те,<br />кто уже <span style={{ color: 'var(--accent)' }}>работает</span> с нами
         </h2>
         <p className="section-subtitle reveal" style={{ textAlign: 'center', margin: '0 auto 2.5rem' }}>
-          Реальные результаты химчисток и клинингов по всей России
+          Результаты наших клиентов по всей России
         </p>
 
         <div className="reviews-grid">

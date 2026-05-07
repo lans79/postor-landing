@@ -16,15 +16,23 @@ export default function About() {
 
           <div className="team-grid">
             {[
-              { initial: 'П', name: 'Павел', role: 'Главный технолог', desc: 'Обладатель титула «Лучший коврочист России». Официальный спикер Clean Expo. Гарант того, что реклама будет экспертной — знает технологию изнутри.' },
-              { initial: 'А', name: 'Андрей', role: 'Продажи и партнёрство', desc: 'Официальный спикер Clean Expo. Нетворкинг с крупнейшими сетями страны. Проведёт вас в мир системного маркетинга, который приносит реальные заказы.' },
-              { initial: 'Ю', name: 'Юрий', role: 'Стратегия', desc: 'Архитектор бизнес-процессов. Строит рекламные системы так, чтобы телефон в цеху не замолкал от входящих заявок.' },
+              { initial: 'П', photo: '/pavel.jpg', name: 'Павел', role: 'Инноватор · Тестировщик идей', desc: 'Все технологические прорывы и нестандартные решения рождаются здесь. Тестирует гипотезы первым — пока конкуренты копируют вчерашнее, Павел уже запускает следующее.' },
+              { initial: 'А', photo: null,         name: 'Андрей', role: 'Коммуникатор · Развитие', desc: 'Голос агентства и первое лицо для новых клиентов. Умеет слышать задачу бизнеса и превращать её в конкретный результат. Если вы здесь — скорее всего, именно Андрей привёл вас сюда.' },
+              { initial: 'Ю', photo: '/yuri.jpg',  name: 'Юрий', role: 'Операционный директор', desc: 'Управляет агентством изнутри. Под его руководством запускаются и ведутся все рекламные кампании — от первого созвона до финального отчёта.' },
             ].map((m, i) => (
               <div className={`team-card reveal reveal-delay-${i + 1}`} key={i}>
-                <div className="team-avatar">{m.initial}</div>
-                <h3 className="team-name">{m.name}</h3>
-                <p className="team-role">{m.role}</p>
-                <p className="team-desc">{m.desc}</p>
+                {m.photo ? (
+                  <div className="team-photo-wrap">
+                    <img src={m.photo} alt={`${m.name} — ${m.role}, команда Постор`} className="team-photo" />
+                  </div>
+                ) : (
+                  <div className="team-avatar">{m.initial}</div>
+                )}
+                <div className="team-info">
+                  <h3 className="team-name">{m.name}</h3>
+                  <p className="team-role">{m.role}</p>
+                  <p className="team-desc">{m.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -49,7 +57,7 @@ export default function About() {
               {[
                 {
                   title: 'Дулито — 155 000+ подписчиков',
-                  desc: 'Крупнейшая клининговая группа в Рунете. Знаем изнутри, что цепляет аудиторию в нише.',
+                  desc: 'Крупнейшая группа в Рунете по услугам. Тестируем новые связки на собственном кабинете — к клиентам приходят уже проверенные решения.',
                   icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
@@ -79,7 +87,7 @@ export default function About() {
                 },
                 {
                   title: 'Отчёт каждый месяц',
-                  desc: 'Только лиды, CPL и бюджет. Никаких охватов и показов вместо реальных цифр.',
+                  desc: 'Лиды, CPL, охваты и бюджет — в одном отчёте. Только реальные цифры по каждой цели кампании.',
                   icon: (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>

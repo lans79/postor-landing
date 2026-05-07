@@ -32,7 +32,7 @@ async function sendToTelegram(data) {
 
 export default function ContactForm() {
   const ref = useReveal()
-  const [form, setForm] = useState({ name: '', phone: '', niche: '', city: '', contact: CHANNELS[0], vk: '' })
+  const [form, setForm] = useState({ name: '', phone: '', city: '', niche: '', contact: CHANNELS[0], vk: '' })
   const [status, setStatus] = useState('idle')
 
   const handleSubmit = async (e) => {
@@ -110,8 +110,6 @@ export default function ContactForm() {
                   ))}
                 </div>
               </div>
-
-              <input type="text" placeholder="Ссылка на группу ВК (если есть)" value={form.vk} onChange={set('vk')} />
 
               {status === 'error' && (
                 <p style={{ color: '#c0392b', fontSize: '0.875rem' }}>

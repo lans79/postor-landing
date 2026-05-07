@@ -37,9 +37,9 @@ export default function Pain() {
             </p>
             <div className="pain-stats reveal">
               {[
-                { value: '216 ₽',  label: 'минимальный CPL · в нашей практике' },
-                { value: '9 ₽',    label: 'стоимость подписчика · в VK Ads для ниши' },
-                { value: '−40%',   label: 'снижение CPL · после оптимизации' },
+                { value: '291 ₽',  label: 'минимальный CPL · Яндекс Директ' },
+                { value: '7 ₽',    label: 'стоимость подписчика · в VK Ads для ниши' },
+                { value: '−20%',   label: 'снижение CPL · после оптимизации' },
                 { value: '1 день', label: 'до первых заявок · после запуска рекламы' },
               ].map((s, i) => (
                 <div className="pain-stat" key={i}>
@@ -84,16 +84,17 @@ export default function Pain() {
           ))}
         </div>
 
-        <div className="reveal" style={{ marginTop: '2rem', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'Unbounded, sans-serif', fontWeight: 900, fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', letterSpacing: '-0.025em' }}>
-            Мы решаем всё это — <span style={{ color: 'var(--accent)' }}>с первого месяца.</span>
-          </p>
-        </div>
       </div>
 
       <style>{`
         @media (max-width: 1024px) {
           .pain-header-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        }
+        @media (max-width: 768px) {
+          .pain-header-grid + div > div {
+            grid-template-columns: 1fr !important;
+            padding: 1.5rem !important;
+          }
         }
       `}</style>
     </section>

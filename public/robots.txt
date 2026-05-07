@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /privacy.html
+Disallow: /offer.html
+
+Sitemap: https://postorrr.ru/sitemap.xml

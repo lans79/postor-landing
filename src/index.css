@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@700;800;900&display=swap');
 
-@import "tailwindcss";
-
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -137,10 +135,20 @@ img { max-width: 100%; display: block; }
 
 /* ===== HERO ===== */
 .hero { padding-top: 7rem; padding-bottom: 3rem; position: relative; overflow: hidden; }
-.hero-bg {
+.hero-bg-video {
   position: absolute; inset: 0;
-  background: url('/fon.jpg') center center / cover no-repeat;
-  opacity: 0.55;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  pointer-events: none; z-index: 0;
+}
+.hero-bg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,1) 50%,
+    rgba(206,241,68,0.30) 100%
+  );
   pointer-events: none; z-index: 0;
 }
 .hero-content { position: relative; }
@@ -382,21 +390,75 @@ img { max-width: 100%; display: block; }
 
 /* ===== TEAM ===== */
 .team-section { background: var(--gray-light); }
-.team-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3rem; }
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
 @media (min-width: 768px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+
 .team-card {
-  background: var(--white); border-radius: 2rem; padding: 2.5rem;
-  text-align: center; transition: all 0.4s;
+  background: var(--white);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: left;
+  transition: all 0.4s;
 }
-.team-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(15,15,15,0.08); }
+.team-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(15,15,15,0.1); }
+
+/* Фото — высокий скруглённый прямоугольник */
+.team-photo-wrap {
+  flex-shrink: 0;
+  width: 140px;
+  height: 185px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.team-photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Аватар-буква */
 .team-avatar {
-  width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 1.5rem;
-  background: var(--primary); display: flex; align-items: center; justify-content: center;
-  font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 2rem; color: var(--accent);
+  flex-shrink: 0;
+  width: 140px;
+  height: 185px;
+  border-radius: 999px;
+  background: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 2.5rem; color: var(--accent);
 }
-.team-name { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 1.25rem; text-transform: uppercase; margin-bottom: 0.5rem; }
-.team-role { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 1rem; }
-.team-desc { font-size: 0.875rem; font-weight: 500; color: var(--gray-text); line-height: 1.4; }
+
+.team-info { display: flex; flex-direction: column; }
+.team-name {
+  font-family: 'Unbounded', sans-serif; font-weight: 800;
+  font-size: 1.1rem; text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.team-role {
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.team-desc {
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--gray-text); line-height: 1.5;
+}
+
+/* Разделитель между ролью и описанием */
+.team-role::after {
+  content: ''; display: block;
+  width: 2rem; height: 2px;
+  background: var(--accent);
+  margin-top: 0.6rem;
+}
 
 /* ===== ABOUT ===== */
 .about-section { background: var(--primary); color: var(--white); }
@@ -779,6 +841,9 @@ img { max-width: 100%; display: block; }
 
   /* Team */
   .team-grid { grid-template-columns: 1fr !important; }
+  .team-card { flex-direction: column; align-items: center; text-align: center; }
+  .team-role::after { margin: 0.6rem auto 0; }
+  .team-photo-wrap, .team-avatar { width: 100px; height: 140px; }
 
   /* Reviews */
   .reviews-grid { grid-template-columns: 1fr; gap: 1rem; }
