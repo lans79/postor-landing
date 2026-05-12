@@ -5,6 +5,7 @@ import Pain from './components/Pain'
 import About from './components/About'
 import Services from './components/Services'
 import Cases from './components/Cases'
+import VideoReviews from './components/VideoReviews'
 import Reviews from './components/Reviews'
 import Process from './components/Process'
 import UrgencyStrip from './components/UrgencyStrip'
@@ -23,6 +24,7 @@ export default function App() {
         <About />
         <Services />
         <Cases />
+        <VideoReviews />
         <Reviews />
         <Process />
         <UrgencyStrip />
