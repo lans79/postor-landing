@@ -7,7 +7,7 @@ const PHONE = '+79028689293'
 const PHONE_DISPLAY = '+7 902 868-92-93'
 const TG_MANAGER = 'https://t.me/postorrr_manager'
 const TG_BOT_TOKEN = '8519318557:AAHxxeUhIcxA9V9aK_Gn2FlaUkhbvFoIeG0'
-const TG_CHAT_ID = 'YOUR_CHAT_ID'
+const TG_CHAT_ID = '6702393588'
 
 const NICHES = ['Химчистка ковров', 'Выездной клининг', 'Прачечная / Стирка', 'Уборка квартир', 'Другое']
 const CHANNELS = ['Позвоните мне', 'Напишите в Telegram', 'Напишите в Макс']
