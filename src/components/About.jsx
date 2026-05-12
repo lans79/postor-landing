@@ -3,8 +3,6 @@ import { useReveal } from '../hooks/useReveal'
 const aboutStats = [
   { value: '10+', label: 'лет на рынке' },
   { value: '155K+', label: 'подписчиков Дулито' },
-  { value: 'от 7 ₽', label: 'рекорд CPL в нише' },
-  { value: '100%', label: 'договор и отчёт' },
 ]
 
 const cards = [
@@ -108,7 +106,8 @@ export default function About() {
               {/* Строка цифр */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: 'auto auto',
+                justifyContent: 'flex-start',
                 gap: '1rem',
                 marginBottom: '1.75rem',
                 padding: '1.25rem',
