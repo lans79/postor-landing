@@ -1,9 +1,5 @@
 import { useReveal } from '../hooks/useReveal'
 
-const aboutStats = [
-  { value: '10+', label: 'лет на рынке' },
-  { value: '155K+', label: 'подписчиков Дулито' },
-]
 
 const cards = [
   {
@@ -103,30 +99,35 @@ export default function About() {
                 Мы не агентство.<br /><span style={{ color: 'var(--accent)' }}>Мы — практики.</span>
               </h2>
 
-              {/* Строка цифр */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'auto auto',
-                justifyContent: 'flex-start',
-                gap: '1rem',
-                marginBottom: '1.75rem',
-                padding: '1.25rem',
-                background: 'rgba(255,255,255,0.05)',
-                borderRadius: '1.25rem',
-                border: '1px solid rgba(255,255,255,0.08)',
-              }}>
-                {aboutStats.map((s, i) => (
-                  <div key={i}>
-                    <p style={{
-                      fontFamily: 'Unbounded, sans-serif',
-                      fontWeight: 900,
-                      fontSize: '1.3rem',
-                      color: 'var(--accent)',
-                      letterSpacing: '-0.02em',
-                      lineHeight: 1.1,
-                      marginBottom: '0.2rem',
-                    }}>{s.value}</p>
-                    <p style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.45)', fontWeight: 500, lineHeight: 1.3 }}>{s.label}</p>
+              {/* Гарантии */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginBottom: '1.75rem' }}>
+                {[
+                  'Договор до старта — фиксируем KPI и бюджет на бумаге',
+                  'Не берём всех — работаем только с чисткой ковров и клинингом',
+                  'Если не выполнили план — возвращаем разницу',
+                ].map((text, i) => (
+                  <div key={i} style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '0.75rem',
+                    padding: '0.85rem 1rem',
+                    background: 'rgba(255,255,255,0.04)',
+                    borderRadius: '0.875rem',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                  }}>
+                    <span style={{
+                      flexShrink: 0,
+                      width: 22, height: 22,
+                      borderRadius: '50%',
+                      background: 'var(--accent)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      marginTop: '0.05rem',
+                    }}>
+                      <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                        <path d="M2 6l3 3 5-5" stroke="#0F0F0F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </span>
+                    <p style={{ margin: 0, fontSize: '0.88rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)', lineHeight: 1.4 }}>{text}</p>
                   </div>
                 ))}
               </div>
