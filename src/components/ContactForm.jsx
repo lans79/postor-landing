@@ -135,7 +135,7 @@ export default function ContactForm() {
             <a href="#" style={{ display: 'inline-block' }}>
               <img src={logo} alt="Postorrr Team" style={{ height: 24, width: 'auto' }} />
             </a>
-            <p className="footer-copy">© 2026 Postorrr Team. Все права защищены.<br />ИП Петрова Мария Андреевна</p>
+            <p className="footer-copy">© 2026 Postorrr Team. Все права защищены.<br />ИП Федосов Павел Николаевич · ИНН 745307107068<br /><span style={{ fontSize: '0.7rem', color: 'var(--gray-text)', opacity: 0.6 }}>Реклама · erid: 5544043491</span></p>
             <div style={{ marginTop: '1rem' }}>
               <SocialRow size={34} />
             </div>
