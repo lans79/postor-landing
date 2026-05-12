@@ -35,18 +35,29 @@ export default function Pain() {
             <p className="reveal" style={{ color: 'var(--gray-text)', fontSize: '1.125rem', fontWeight: 500, lineHeight: 1.4, marginBottom: '1.5rem' }}>
               Большинство химчисток сталкиваются с одними и теми же проблемами в рекламе. Не потому что реклама не работает — а потому что подрядчик не знает вашу нишу.
             </p>
-            <div className="pain-stats reveal">
-              {[
-                { value: '291 ₽',  label: 'минимальный CPL · Яндекс Директ' },
-                { value: '7 ₽',    label: 'стоимость подписчика · в VK Ads для ниши' },
-                { value: '−20%',   label: 'снижение CPL · после оптимизации' },
-                { value: '1 день', label: 'до первых заявок · после запуска рекламы' },
-              ].map((s, i) => (
-                <div className="pain-stat" key={i}>
-                  <span className="pain-stat__value">{s.value}</span>
-                  <span className="pain-stat__label">{s.label}</span>
-                </div>
-              ))}
+            <div className="reveal" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '1rem',
+              background: 'var(--white)',
+              border: '1px solid var(--border-light)',
+              borderRadius: '1.25rem',
+              padding: '1rem 1.5rem',
+            }}>
+              <span style={{
+                fontFamily: 'Unbounded, sans-serif',
+                fontWeight: 900,
+                fontSize: '2rem',
+                color: 'var(--accent)',
+                letterSpacing: '-0.03em',
+                lineHeight: 1,
+                background: 'var(--primary)',
+                borderRadius: '0.75rem',
+                padding: '0.4rem 0.85rem',
+              }}>1 день</span>
+              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--gray-text)', lineHeight: 1.3 }}>
+                до первых заявок<br />после запуска рекламы
+              </span>
             </div>
           </div>
         </div>

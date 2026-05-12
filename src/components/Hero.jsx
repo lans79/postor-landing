@@ -15,7 +15,7 @@ export default function Hero() {
 
         <div className="hero-bottom hero-anim hero-anim--d1">
           <p className="hero-desc">
-            VK Ads и Яндекс Директ для химчисток и клинингов. Собственный цех, паблик 155 000+ и CPL от 291 ₽. Тестируем на своих — к вам приходят рабочие решения.
+            Мы сами в нише: держим цех, ведём паблик и тестируем связки на собственных бюджетах. К вам приходят только проверенные решения — без экспериментов за ваш счёт.
           </p>
           <div className="hero-cta">
             <a href="#contact" className="btn-primary btn-breathe" style={{ padding: '1.15rem 2.5rem', fontSize: '1.1rem' }}>
