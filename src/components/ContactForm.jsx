@@ -20,7 +20,7 @@ const AUDIT_ITEMS = [
 ]
 
 async function sendToTelegram(data) {
-  const text = `🔔 Новая заявка с сайта Postorrr\n\n👤 Имя: ${data.name}\n📞 Телефон: ${data.phone}\n🏢 Ниша: ${data.niche || '—'}\n📍 Город: ${data.city || '—'}\n💬 Связь: ${data.contact || '—'}\n🔗 Группа ВК: ${data.vk || '—'}`
+  const text = `🔔 Новая заявка с сайта Постор\n\n👤 Имя: ${data.name}\n📞 Телефон: ${data.phone}\n🏢 Ниша: ${data.niche || '—'}\n📍 Город: ${data.city || '—'}\n💬 Связь: ${data.contact || '—'}\n🔗 Группа ВК: ${data.vk || '—'}`
   if (TG_BOT_TOKEN === 'YOUR_BOT_TOKEN') { console.log('Telegram заглушка:', text); return true }
   const res = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
     method: 'POST',
@@ -133,9 +133,9 @@ export default function ContactForm() {
         <div className="footer-bottom">
           <div>
             <a href="#" style={{ display: 'inline-block' }}>
-              <img src={logo} alt="Postorrr Team" style={{ height: 24, width: 'auto' }} />
+              <img src={logo} alt="Постор" style={{ height: 24, width: 'auto' }} />
             </a>
-            <p className="footer-copy">© 2026 Postorrr Team. Все права защищены.<br />ИП Федосов Павел Николаевич · ИНН 745307107068<br /><span style={{ fontSize: '0.7rem', color: 'var(--gray-text)', opacity: 0.6 }}>Реклама · erid: 5544043491</span></p>
+            <p className="footer-copy">© 2026 Постор. Все права защищены.<br />ИП Федосов Павел Николаевич · ИНН 745307107068<br /><span style={{ fontSize: '0.7rem', color: 'var(--gray-text)', opacity: 0.6 }}>Реклама · erid: 5544043491</span></p>
             <div style={{ marginTop: '1rem' }}>
               <SocialRow size={34} />
             </div>
