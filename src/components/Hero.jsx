@@ -1,14 +1,7 @@
 export default function Hero() {
   return (
     <section className="hero">
-      <video
-        className="hero-bg-video"
-        src="/carpet_2.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
+      <img className="hero-bg-video" src="/fon.jpg" alt="" aria-hidden="true" />
       <div className="hero-bg-overlay" />
       <div className="container hero-content">
 

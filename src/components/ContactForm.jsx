@@ -88,7 +88,7 @@ export default function ContactForm() {
           ) : (
             <form className="contact-form-wrap" onSubmit={handleSubmit}>
               <input type="text" placeholder="Ваше имя или название цеха" required value={form.name} onChange={set('name')} />
-              <input type="tel" placeholder="Телефон" required value={form.phone} onChange={set('phone')} />
+              <input type="tel" placeholder="Телефон" required inputMode="tel" pattern="[\d\s\+\-\(\)]{7,20}" title="Введите номер телефона" value={form.phone} onChange={set('phone')} />
 
               <div className="form-row">
                 <select value={form.niche} onChange={set('niche')} className="form-select">
@@ -100,7 +100,7 @@ export default function ContactForm() {
 
               {/* Удобный канал */}
               <div className="contact-channels">
-                <p className="contact-channels__label">Как удобнее связаться?</p>
+                <p className="contact-channels__label">Как удобнее связаться? <span style={{ fontWeight: 400, opacity: 0.6, fontSize: '0.85em' }}>(выберите один вариант)</span></p>
                 <div className="contact-channels__list">
                   {CHANNELS.map(ch => (
                     <label key={ch} className={`channel-chip ${form.contact === ch ? 'active' : ''}`}>
@@ -135,7 +135,7 @@ export default function ContactForm() {
             <a href="#" style={{ display: 'inline-block' }}>
               <img src={logo} alt="Постор" style={{ height: 24, width: 'auto' }} />
             </a>
-            <p className="footer-copy">© 2026 Постор. Все права защищены.<br />ИП Федосов Павел Николаевич · ИНН 745307107068<br /><span style={{ fontSize: '0.7rem', color: 'var(--gray-text)', opacity: 0.6 }}>Реклама · erid: 5544043491</span></p>
+            <p className="footer-copy">© {new Date().getFullYear()} Постор. Все права защищены.<br />ИП Федосов Павел Николаевич · ИНН 745307107068<br /><span style={{ fontSize: '0.7rem', color: 'var(--gray-text)', opacity: 0.6 }}>Реклама · erid: 5544043491</span></p>
             <div style={{ marginTop: '1rem' }}>
               <SocialRow size={34} />
             </div>
@@ -143,7 +143,6 @@ export default function ContactForm() {
           <div className="footer-links">
             <a href="/privacy.html">Политика конфиденциальности</a>
             <a href="/offer.html">Договор оферты</a>
-            <a href="#">Cookies</a>
           </div>
         </div>
       </div>

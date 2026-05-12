@@ -25,8 +25,8 @@ export default function Header() {
     <>
       <header className={`header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-inner">
-          <a href="#" aria-label="Postor" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={logo} alt="Postor" style={{ display: 'block', height: 28, width: 'auto' }} />
+          <a href="#" aria-label="Постор" style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={logo} alt="Постор" style={{ display: 'block', height: 28, width: 'auto' }} />
           </a>
 
           <nav className="nav-links">
@@ -56,7 +56,7 @@ export default function Header() {
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem' }}>
           <a href="#" onClick={closeMenu}>
-            <img src={logo} alt="Postor" style={{ height: 40, width: 'auto', display: 'block' }} />
+            <img src={logo} alt="Постор" style={{ height: 40, width: 'auto', display: 'block' }} />
           </a>
           <button
             onClick={closeMenu}
