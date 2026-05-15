@@ -4,5 +4,5 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ command }) => ({
   plugins: [react(), tailwindcss()],
-  base: command === 'build' ? '/postor-landing/' : '/',
+  base: process.env.VERCEL ? '/' : (command === 'build' ? '/postor-landing/' : '/'),
 }))
