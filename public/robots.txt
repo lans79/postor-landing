@@ -19,4 +19,4 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-Sitemap: https://postorrr.ru/sitemap.xml
+Sitemap: https://postor.ru/sitemap.xml
