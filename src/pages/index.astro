@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+// Static .astro components (render to HTML at build time — visible to AI bots)
+import Ticker from '../components/Ticker.astro'
+import Pain from '../components/Pain.astro'
+import About from '../components/About.astro'
+import Services from '../components/Services.astro'
+import Cases from '../components/Cases.astro'
+import Reviews from '../components/Reviews.astro'
+import Process from '../components/Process.astro'
+import UrgencyStrip from '../components/UrgencyStrip.astro'
+
+// React islands (interactive, hydrated on client)
+import Header from '../components/Header.jsx'
+import Hero from '../components/Hero.jsx'
+import FAQ from '../components/FAQ.jsx'
+import ContactForm from '../components/ContactForm.jsx'
+import VideoReviews from '../components/VideoReviews.jsx'
+import MobileStickyBtn from '../components/MobileStickyBtn.jsx'
+---
+
+<BaseLayout>
+  <Header client:load />
+  <main>
+    <Hero client:load />
+    <Ticker />
+    <Pain />
+    <About />
+    <Services />
+    <Cases />
+    <VideoReviews client:visible />
+    <Reviews />
+    <Process />
+    <UrgencyStrip />
+    <FAQ client:visible />
+    <ContactForm client:visible />
+  </main>
+  <MobileStickyBtn client:load />
+</BaseLayout>

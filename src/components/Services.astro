@@ -1,0 +1,101 @@
+---
+const includes = ['VK Ads', 'Видео-креативы', 'ОРД-маркировка', 'Живой контент', 'Отчёт ежемесячно']
+---
+
+<section id="services" class="section-padding">
+  <div class="container">
+    <p class="section-label reveal">Услуги</p>
+    <h2 class="section-title reveal">Решения для<br />вашего бизнеса</h2>
+    <p class="section-subtitle reveal services-subtitle">Полный спектр digital-маркетинга от специалистов-практиков.</p>
+
+    <div style="margin-top:3.5rem;display:flex;flex-direction:column;gap:1.5rem;">
+
+      <!-- Row 1: 3 cards -->
+      <div class="services-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+
+        <div class="service-card service-card--logo reveal reveal-delay-1">
+          <img src="/vk_1.webp" class="service-card__logo" alt="VK Ads" />
+          <div class="service-card__content">
+            <h3>Таргет VK Ads</h3>
+            <p>Работа на лид-формы и сообщения. Оплата за результат, а не за клики. Тестируем связки на своих бюджетах.</p>
+          </div>
+        </div>
+
+        <div class="service-card service-card--logo reveal reveal-delay-2">
+          <span class="service-badge">Горячий спрос</span>
+          <img src="/ya_1.webp" class="service-card__logo" alt="Яндекс Директ" />
+          <div class="service-card__content">
+            <h3>Контекстная реклама</h3>
+            <p>Яндекс.Директ. Работаем с горячим спросом, возвращаем клиентов через ретаргетинг. Платите только за реальные заявки.</p>
+          </div>
+        </div>
+
+        <!-- Offer card -->
+        <div class="service-card service-card--offer reveal reveal-delay-3">
+          <div>
+            <p class="offer-label">Тариф · 1 регион</p>
+            <div class="offer-price">20 000 ₽<span class="offer-price-period">/мес</span></div>
+          </div>
+
+          <div style="height:1px;background:rgba(15,15,15,0.18);"></div>
+
+          <div class="offer-utp">
+            <p class="offer-utp__headline">
+              <mark class="offer-mark">Фиксированная ставка</mark> — нам невыгодно тратить ваш бюджет впустую
+            </p>
+          </div>
+
+          <div class="offer-includes">
+            <p class="offer-includes__label">Что входит</p>
+            <div class="offer-includes__list">
+              {includes.map((item) => (
+                <span class="offer-chip">{item}</span>
+              ))}
+            </div>
+          </div>
+
+          <a href="#contact" class="btn-primary" style="background:var(--primary);color:var(--accent);text-align:center;">
+            Обсудить проект →
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 2: 3 cards -->
+      <div class="services-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+        <div class="service-card reveal">
+          <h3>Реклама на картах</h3>
+          <p>Яндекс Карты. Привлекаем горячих клиентов, которые ищут химчистку рядом с домом.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Яндекс Бизнес</h3>
+          <p>Оформление профиля, работа с отзывами и рейтингом. Запуск приоритетного размещения.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Авито реклама</h3>
+          <p>Упаковка аккаунта, масс-постинг, продвижение объявлений и вывод в топ выдачи.</p>
+        </div>
+      </div>
+
+      <!-- Row 3: full-width dark card -->
+      <div class="reveal" style="background:var(--primary);border-radius:2rem;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+        <div>
+          <h3 style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1.5rem,3vw,2rem);text-transform:uppercase;color:var(--white);margin-bottom:0.75rem;">
+            Продакшн контента
+          </h3>
+          <p style="color:var(--gray-text);font-weight:500;font-size:0.9rem;max-width:460px;line-height:1.4;">
+            Профессиональные фото, цепляющие видео-креативы и продающие тексты для всех каналов продвижения.
+          </p>
+        </div>
+        <a href="#contact" class="btn-primary" style="background:var(--white);color:var(--primary);padding:1rem 2.5rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;">
+          Заказать контент
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) { .services-row { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 600px) { .services-row { grid-template-columns: 1fr !important; } }
+</style>

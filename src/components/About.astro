@@ -1,0 +1,142 @@
+---
+const team = [
+  {
+    initial: 'П',
+    photo: '/pavel.jpg',
+    name: 'Павел',
+    role: 'Инноватор · Тестировщик идей',
+    desc: 'Все технологические прорывы и нестандартные решения рождаются здесь. Тестирует гипотезы первым — пока конкуренты копируют вчерашнее, Павел уже запускает следующее.',
+  },
+  {
+    initial: 'А',
+    photo: '/andrey.jpg',
+    name: 'Андрей',
+    role: 'Коммуникатор · Развитие',
+    desc: 'Голос агентства и первое лицо для новых клиентов. Умеет слышать задачу бизнеса и превращать её в конкретный результат. Если вы здесь — скорее всего, именно Андрей привёл вас сюда.',
+  },
+  {
+    initial: 'Ю',
+    photo: '/yuri.jpg',
+    name: 'Юрий',
+    role: 'Операционный директор',
+    desc: 'Управляет агентством изнутри. Под его руководством запускаются и ведутся все рекламные кампании — от первого созвона до финального отчёта.',
+  },
+]
+
+const cards = [
+  {
+    title: 'Дулито — 155 000+ подписчиков',
+    desc: 'Крупнейшая группа в Рунете по услугам. Все инновационные связки тестируем на собственном кабинете.',
+    benefit: 'Вы не платите за эксперименты — к вам приходит то, что уже работает.',
+    iconId: 'people',
+  },
+  {
+    title: 'Спикеры Clean Expo',
+    desc: 'Официальные спикеры съездов коврочистов России. Нас знают от мастеров до федеральных сетей.',
+    benefit: 'Мы не будем гуглить, что такое экстракционная чистка — строим стратегию на знании рынка.',
+    iconId: 'mic',
+  },
+  {
+    title: 'Собственный цех + AI',
+    desc: 'Действующий цех и AI-измерения ковров — работаем на рынке, а не изучаем его со стороны.',
+    benefit: 'Снимаем живой контент у себя. Вам не нужно организовывать съёмку — всё включено.',
+    iconId: 'workshop',
+  },
+  {
+    title: 'Отчёт каждый месяц',
+    desc: 'Лиды, CPL, охваты и бюджет — в одном отчёте по каждой цели кампании.',
+    benefit: 'Видите каждый рубль. Ни один не исчезает в «охватах» и «узнаваемости».',
+    iconId: 'chart',
+  },
+]
+---
+
+<!-- Team section -->
+<section id="team" style="background:var(--gray-light);" class="section-padding">
+  <div class="container">
+    <p class="section-label reveal">Команда</p>
+    <h2 class="section-title reveal">
+      Люди, которым<br />вы <span style="color:var(--accent);">доверяете</span> рекламу
+    </h2>
+
+    <div class="team-grid">
+      {team.map((m, i) => (
+        <div class={`team-card reveal reveal-delay-${i + 1}`}>
+          {m.photo ? (
+            <div class="team-photo-wrap">
+              <img src={m.photo} alt={`${m.name} — ${m.role}, команда Постор`} class="team-photo" />
+            </div>
+          ) : (
+            <div class="team-avatar">{m.initial}</div>
+          )}
+          <div class="team-info">
+            <h3 class="team-name">{m.name}</h3>
+            <p class="team-role">{m.role}</p>
+            <p class="team-desc">{m.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- About / competencies section -->
+<section id="about" class="about-section section-padding">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Left column -->
+      <div class="about-text reveal">
+        <p class="section-label" style="color:var(--gray-text);">Работаем с 2015 года</p>
+        <h2 class="section-title" style="color:var(--white);margin-bottom:1.5rem;">
+          Мы не агентство.<br /><span style="color:var(--accent);">Мы — практики.</span>
+        </h2>
+        <p style="color:rgba(255,255,255,0.65);font-size:1rem;font-weight:500;line-height:1.6;">
+          Нанимая нас, вы нанимаете команду с собственным цехом, действующим пабликом и живыми кейсами — не теоретиков, которые вчера рекламировали пиццу. Знаем изнутри: когда сезон, где теряются заявки и почему клиент звонит — или не звонит.
+        </p>
+      </div>
+
+      <!-- Right column — cards -->
+      <div class="about-cards">
+        {cards.map((card, i) => (
+          <div class={`about-card reveal reveal-delay-${i + 1}`}>
+            <div class="about-card-icon">
+              {card.iconId === 'people' && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              )}
+              {card.iconId === 'mic' && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"/>
+                </svg>
+              )}
+              {card.iconId === 'workshop' && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                  <line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+                </svg>
+              )}
+              {card.iconId === 'chart' && (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>
+                </svg>
+              )}
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <h4>{card.title}</h4>
+              <p style="margin:0;">{card.desc}</p>
+              <p style="margin:0;color:var(--accent);font-size:0.82rem;font-weight:600;line-height:1.4;padding-top:0.35rem;border-top:1px solid rgba(206,241,68,0.2);">
+                → {card.benefit}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

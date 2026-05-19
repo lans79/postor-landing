@@ -1,0 +1,33 @@
+---
+const PERKS = [
+  'Мы не берём двух клиентов из одного города',
+  'Ваша реклама работает только на вас — без слива аудитории конкурентам',
+  'Доступность вашего региона уточним при первом обращении',
+]
+---
+
+<section class="urgency-section">
+  <div class="container">
+    <div class="urgency-inner reveal">
+      <div class="urgency-left">
+        <p class="urgency-label">Эксклюзивность по региону</p>
+        <h3 class="urgency-title">
+          Один город —<br />один клиент
+        </h3>
+      </div>
+      <div class="urgency-right">
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          {PERKS.map((p) => (
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;">
+              <span style="width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.7rem;font-weight:900;color:var(--primary);margin-top:0.05rem;">✓</span>
+              <p style="color:rgba(255,255,255,0.75);font-weight:500;font-size:0.95rem;line-height:1.4;">{p}</p>
+            </div>
+          ))}
+        </div>
+        <a href="#contact" class="btn-primary" style="margin-top:1.5rem;white-space:nowrap;align-self:flex-start;">
+          Уточнить свой регион →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

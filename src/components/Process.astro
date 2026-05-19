@@ -1,0 +1,72 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Заявка',
+    desc: 'Вы оставляете заявку — мы связываемся в течение часа. Без авто-воронок и долгих ожиданий.',
+    time: '~1 час',
+  },
+  {
+    num: '02',
+    title: 'Аудит',
+    desc: 'Бесплатно разбираем вашу текущую рекламу или отсутствие таковой. Находим точки роста и слабые места.',
+    time: '~24 часа',
+  },
+  {
+    num: '03',
+    title: 'Стратегия',
+    desc: 'Готовим персональный медиаплан: каналы, бюджет, форматы. Показываем, что и почему будем делать.',
+    time: '~3 дня',
+  },
+  {
+    num: '04',
+    title: 'Запуск',
+    desc: 'Создаём креативы, настраиваем кампании, маркируем через ОРД. Первые обращения — уже в первую неделю.',
+    time: '~7 дней',
+  },
+]
+---
+
+<section id="process" class="section-padding" style="background:var(--gray-light);">
+  <div class="container">
+    <p class="section-label reveal">Процесс</p>
+    <h2 class="section-title reveal">
+      От заявки до первых<br /><span style="color:var(--accent);">заказов — 4 шага</span>
+    </h2>
+
+    <div class="process-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem;position:relative;">
+      {steps.map((step, i) => (
+        <div
+          class={`reveal reveal-delay-${i + 1}`}
+          style="background:var(--white);border-radius:2rem;padding:2rem;border:1px solid var(--border-light);position:relative;"
+        >
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+            <span style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:3rem;color:var(--accent);letter-spacing:-0.025em;line-height:1.05;">
+              {step.num}
+            </span>
+            <span style="background:var(--primary);color:var(--accent);border-radius:9999px;padding:0.3rem 0.8rem;font-size:0.65rem;font-weight:700;letter-spacing:0.05em;">
+              {step.time}
+            </span>
+          </div>
+          <h3 style="font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.1rem;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:0.75rem;">
+            {step.title}
+          </h3>
+          <p style="color:var(--gray-text);font-size:0.85rem;font-weight:500;line-height:1.4;">
+            {step.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:2rem;">
+      <a href="#contact" class="btn-primary" style="padding:1.15rem 3rem;">
+        Получить бесплатный аудит →
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) { .process-grid { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 500px) { .process-grid { grid-template-columns: 1fr !important; } }
+</style>

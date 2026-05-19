@@ -1,0 +1,14 @@
+---
+const items = ['Таргет VK', '•', 'Контекстная реклама', '•', 'Яндекс Карты', '•', 'Авито', '•', 'Продакшн контента', '•', 'Яндекс Бизнес', '•']
+const doubled = [...items, ...items]
+---
+
+<div class="marquee">
+  <div class="marquee-track">
+    {doubled.map((item, i) => (
+      <span class={item !== '•' && i % 4 === 0 ? 'accent-text' : ''}>
+        {item}
+      </span>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,229 @@
+---
+const casesVK = [
+  {
+    city: 'Луганск',
+    goal: 'Запустить группу с нуля',
+    metric: '2 740',
+    unit: 'подписчиков за месяц',
+    badges: ['10 ₽/подп.', 'рекорд агентства'],
+    before: '0 подписчиков',
+    after: '2 740 подп.',
+    channel: 'VK Ads · Подписки',
+    period: '1 месяц',
+    dark: false,
+  },
+  {
+    city: 'Брянск',
+    goal: 'Снизить стоимость подписчика',
+    metric: '7 ₽',
+    unit: 'за подписчика — рекорд ниши',
+    badges: ['−77% к рынку'],
+    before: '30+ ₽/подп.',
+    after: '7 ₽/подп.',
+    channel: 'VK Реклама · Подписки',
+    period: null,
+    dark: true,
+  },
+  {
+    city: 'Нижний Новгород',
+    goal: 'Генерировать заявки в диалоги',
+    metric: '1 502',
+    unit: 'обращения за месяц',
+    badges: ['рекордный поток'],
+    before: 'единичные заявки',
+    after: '1 502 сообщения',
+    channel: 'VK Ads · Сообщения',
+    period: '1 месяц',
+    dark: false,
+  },
+]
+
+const casesYandex = [
+  {
+    city: 'Нижний Новгород',
+    goal: 'Привести только целевые лиды',
+    metric: '291 ₽',
+    unit: 'стоимость лида',
+    badges: ['105 лидов', 'без мусорных кликов'],
+    before: 'нецелевой трафик',
+    after: '105 лидов · 291 ₽',
+    channel: 'Яндекс Директ · Поиск + РСЯ',
+    period: null,
+    dark: true,
+  },
+  {
+    city: 'Уфа',
+    goal: 'Оптимизировать кампании',
+    metric: '+93%',
+    unit: 'лидов после оптимизации',
+    badges: ['CPL −20%', '212 лидов/мес'],
+    before: '110 лидов · 1 030 ₽',
+    after: '212 лидов · 826 ₽',
+    channel: 'Яндекс Директ · Поиск + РСЯ',
+    period: null,
+    dark: false,
+  },
+  {
+    city: 'Челябинск',
+    goal: 'Масштабировать поток заявок',
+    metric: '×14',
+    unit: 'рост потока лидов',
+    badges: ['квиз-воронка'],
+    before: '53 лида · 759 ₽',
+    after: 'рост ×14',
+    channel: 'Яндекс Директ · Квиз + Поиск',
+    period: null,
+    dark: false,
+  },
+]
+---
+
+<section id="cases" class="section-padding">
+  <div class="container">
+
+    <div style="margin-bottom:2.5rem;">
+      <p class="section-label">Результаты</p>
+      <h2 class="section-title" style="font-size:clamp(2.5rem,6vw,5rem);margin-bottom:1rem;">
+        Кейсы<br />агентства
+      </h2>
+      <p style="color:var(--gray-text);font-size:1.125rem;font-weight:500;line-height:1.4;max-width:560px;">
+        Реальные цифры из рекламных кабинетов — с задачей, результатом и сравнением до/после.
+      </p>
+    </div>
+
+    <!-- VK -->
+    <p class="cases-channel-label">VK Реклама</p>
+    <div class="cases-cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem;">
+      {casesVK.map((c, i) => {
+        const dim = c.dark ? 'rgba(255,255,255,0.45)' : 'var(--gray-text)'
+        const dimBg = c.dark ? 'rgba(255,255,255,0.06)' : 'rgba(15,15,15,0.04)'
+        return (
+          <div
+            class={`reveal reveal-delay-${(i % 3) + 1}`}
+            style={`background:${c.dark ? 'var(--primary)' : 'var(--gray-light)'};color:${c.dark ? 'var(--white)' : 'var(--primary)'};border-radius:2rem;padding:2rem;display:flex;flex-direction:column;gap:1.1rem;min-height:380px;border:${c.dark ? 'none' : '1px solid var(--border-light)'};`}
+          >
+            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+              <span class={`case-tag ${c.dark ? 'case-tag--dark' : ''}`}>Химчистка ковров</span>
+              <span class={`case-tag ${c.dark ? 'case-tag--dark' : ''}`}>{c.city}</span>
+            </div>
+            <div>
+              <p style={`font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${dim};margin-bottom:0.3rem;`}>Задача</p>
+              <p style="font-size:0.95rem;font-weight:600;line-height:1.3;">{c.goal}</p>
+            </div>
+            <div style="flex:1;">
+              <p style={`font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(2.8rem,4.5vw,3.8rem);line-height:1;color:${c.dark ? 'var(--accent)' : 'var(--primary)'};letter-spacing:-0.03em;margin:0;`}>{c.metric}</p>
+              <p style={`font-size:0.82rem;font-weight:500;color:${dim};margin-top:0.4rem;line-height:1.3;`}>{c.unit}</p>
+            </div>
+            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+              {c.badges.map((b) => (
+                <span style="display:inline-block;background:var(--accent);color:var(--primary);border-radius:9999px;padding:0.25rem 0.75rem;font-size:0.68rem;font-weight:800;letter-spacing:0.04em;">{b}</span>
+              ))}
+            </div>
+            <div style={`display:flex;align-items:center;gap:0.75rem;background:${dimBg};border-radius:1rem;padding:0.75rem 1rem;`}>
+              <div style="min-width:0;flex:1;">
+                <p style={`font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:${dim};margin-bottom:0.2rem;`}>Было</p>
+                <p style={`font-weight:700;font-size:0.82rem;color:${dim};`}>{c.before}</p>
+              </div>
+              <p style={`font-size:1.1rem;color:${dim};flex-shrink:0;`}>→</p>
+              <div style="min-width:0;flex:1;">
+                <p style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:0.2rem;">Стало</p>
+                <p style="font-weight:800;font-size:0.82rem;">{c.after}</p>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;">
+              <p style={`font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:${dim};`}>{c.channel}</p>
+              {c.period && <p style={`font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:${dim};flex-shrink:0;`}>{c.period}</p>}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+
+    <!-- Яндекс -->
+    <p class="cases-channel-label">Яндекс Директ</p>
+    <div class="cases-cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem;">
+      {casesYandex.map((c, i) => {
+        const dim = c.dark ? 'rgba(255,255,255,0.45)' : 'var(--gray-text)'
+        const dimBg = c.dark ? 'rgba(255,255,255,0.06)' : 'rgba(15,15,15,0.04)'
+        return (
+          <div
+            class={`reveal reveal-delay-${(i % 3) + 1}`}
+            style={`background:${c.dark ? 'var(--primary)' : 'var(--gray-light)'};color:${c.dark ? 'var(--white)' : 'var(--primary)'};border-radius:2rem;padding:2rem;display:flex;flex-direction:column;gap:1.1rem;min-height:380px;border:${c.dark ? 'none' : '1px solid var(--border-light)'};`}
+          >
+            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+              <span class={`case-tag ${c.dark ? 'case-tag--dark' : ''}`}>Химчистка ковров</span>
+              <span class={`case-tag ${c.dark ? 'case-tag--dark' : ''}`}>{c.city}</span>
+            </div>
+            <div>
+              <p style={`font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:${dim};margin-bottom:0.3rem;`}>Задача</p>
+              <p style="font-size:0.95rem;font-weight:600;line-height:1.3;">{c.goal}</p>
+            </div>
+            <div style="flex:1;">
+              <p style={`font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(2.8rem,4.5vw,3.8rem);line-height:1;color:${c.dark ? 'var(--accent)' : 'var(--primary)'};letter-spacing:-0.03em;margin:0;`}>{c.metric}</p>
+              <p style={`font-size:0.82rem;font-weight:500;color:${dim};margin-top:0.4rem;line-height:1.3;`}>{c.unit}</p>
+            </div>
+            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+              {c.badges.map((b) => (
+                <span style="display:inline-block;background:var(--accent);color:var(--primary);border-radius:9999px;padding:0.25rem 0.75rem;font-size:0.68rem;font-weight:800;letter-spacing:0.04em;">{b}</span>
+              ))}
+            </div>
+            <div style={`display:flex;align-items:center;gap:0.75rem;background:${dimBg};border-radius:1rem;padding:0.75rem 1rem;`}>
+              <div style="min-width:0;flex:1;">
+                <p style={`font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:${dim};margin-bottom:0.2rem;`}>Было</p>
+                <p style={`font-weight:700;font-size:0.82rem;color:${dim};`}>{c.before}</p>
+              </div>
+              <p style={`font-size:1.1rem;color:${dim};flex-shrink:0;`}>→</p>
+              <div style="min-width:0;flex:1;">
+                <p style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:0.2rem;">Стало</p>
+                <p style="font-weight:800;font-size:0.82rem;">{c.after}</p>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;">
+              <p style={`font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:${dim};`}>{c.channel}</p>
+              {c.period && <p style={`font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:${dim};flex-shrink:0;`}>{c.period}</p>}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:2rem;">
+      <a href="#contact" class="btn-primary" style="padding:1.15rem 3rem;">
+        Получить бесплатный аудит →
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cases-channel-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+  }
+  .case-tag {
+    display: inline-block;
+    background: rgba(15,15,15,0.07);
+    border: 1px solid rgba(15,15,15,0.1);
+    border-radius: 9999px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+  }
+  .case-tag--dark {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.6);
+  }
+  @media (max-width: 900px) { .cases-cols { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 600px) {
+    .cases-cols { grid-template-columns: 1fr !important; }
+    .cases-cols > div { min-height: auto !important; }
+  }
+</style>
