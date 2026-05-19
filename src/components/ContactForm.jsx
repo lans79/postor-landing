@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
-import logo from '../assets/logo.svg'
 import { SocialRow } from './SocialIcons'
+
+const logo = '/logo.svg'
 
 const PHONE = '+79028689293'
 const PHONE_DISPLAY = '+7 902 868-92-93'
